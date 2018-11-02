@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data >
+
+        <variable
+            name="listNote"
+            type="technologies.florasoft.amol.com.mymvvmexample.database.model.Note" />
+
+
+        <variable
+            name="handler"
+            type="technologies.florasoft.amol.com.mymvvmexample.view.adapter.NoteAdapter.MyClickHandler" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> handler.clickview(v, listNote)}">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            app:cardCornerRadius="2dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    tools:text="title"
+                    android:text="@{listNote.title}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/discription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    tools:text="title"
+                    android:text="@{listNote.description}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</layout>
